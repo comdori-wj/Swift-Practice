@@ -1,0 +1,46 @@
+{
+  "data": [
+    {
+      "name": "Janine",
+      "age": 10,
+      "gender": "W",
+      "pet": {
+        "name": "Tiger",
+        "age": "11",
+        "type": "🐈"
+      }
+    },
+    {
+      "name": "Comdori",
+      "age": 10,
+      "gender": "M",
+      "pet": null
+    },
+    {
+      "name": "Mango",
+      "age": 10,
+      "gender": "M",
+      "pet": null
+    },
+    {
+      "name": "Bello",
+      "age": 10,
+      "gender": "M",
+      "pet": {
+        "name": "Tiger",
+        "age": "11",
+        "type": "Cat"
+      }
+    },
+    {
+      "name": "yagom",
+      "age": 2,
+      "gender": "M",
+      "pet": {
+        "name": "gom",
+        "age": "11",
+        "type": "🐻"
+      }
+    }
+  ]
+}
