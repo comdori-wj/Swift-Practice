@@ -37,16 +37,26 @@ class TableViewController: UITableViewController {
        // Configure the cell’s contents with the row and section number.
        // The Basic cell style guarantees a label view is present in textLabel.
         cell.textLabel?.text = "\(indexPath.section), \(indexPath.row)"
-       
+        if indexPath.row == 0 {
+            cell.backgroundColor = .red
+            cell.detailTextLabel?.text = nil
+
+        }
+        var num = 1
+        num += num
+        if indexPath.row == num {
+            cell.detailTextLabel?.text = nil
+        }
+
        return cell
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection
-                                    section: Int) -> String {
+                            section: Int ) -> String {
             
 //            if section == 0
 //            {
-//                return "섹션 0번"
+//                tableView.backgroundColor = .red
 //            }
            return " "
         }
