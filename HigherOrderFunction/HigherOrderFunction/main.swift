@@ -21,7 +21,7 @@ print(numbersAlpa)
 extension Array {
     
     func myMap<T>(closure: (Element) -> T) -> [T] {
-        var result = [T]()
+        var result = [T]() // () 괄호의 의미는 '함수를 실행한다' 라는 뜻
         print(self)
         for index in self {
             result.append(closure(index))
@@ -34,7 +34,7 @@ func out() {
     print("myMap result: ", string.myMap(closure: {Character($0)} ))
 }
 
-out() // () 괄호의 의미는 '함수를 실행한다' 라는 뜻
+out() // myMap result:  ["1", "2", "3", "4", "5"]
 
 // MARK: - Filter
 
@@ -70,7 +70,7 @@ let evenNumbers2 = numbers2.myFilter { (number: Int) -> Bool in
     return number % 2 == 0
 }
 
-print("myFilter result: ", evenNumbers2)
+print("myFilter result: ", evenNumbers2) // myFilter result:  [2, 4, 6, 8]
 
 // MARK: - Reduce
 
@@ -84,10 +84,13 @@ for number in someNumbers {
 
 print(result) // 25
 
-// reduce 메소드 사용
 // 초깃값이 0이고 someNumbers 내부의 모든 값을 더합니다.
 let sum: Int = someNumbers.reduce(0, { (first: Int, second: Int) -> Int in
-    print("\(first) + \(second)") //어떻게 동작하는지 확인해보세요
+    print("\(first) + \(second)") // 어떻게 동작하는지 확인해보세요
+    /*
+     0 + 2
+     2 + 8
+     10 + 15 */
     return first + second
 })
 
@@ -106,10 +109,9 @@ extension Array {
 let sum2 = someNumbers.myReduce(0) { num1, num2 in
     return num1 + num2
 }
-print("myReduce result: ", sum2)
+print("myReduce result: ", sum2) // myReduce result:  25
 
 let subtract = someNumbers.myReduce(0) { num1, num2 in
     return num1 - num2
 }
-print("myReduce result: ", subtract)
-
+print("myReduce result: ", subtract) // myReduce result:  -25
