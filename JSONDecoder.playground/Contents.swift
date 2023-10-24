@@ -24,3 +24,14 @@ print(product.name) // Durian
 print(product.points) // 600
 print(product.description ?? "") // "A fruit with a distinctive scent."
 
+protocol Nameable {
+    var name: String { get }
+}
+
+struct Person: Nameable {
+    let name: String  // This is a read-only stored property
+}
+
+struct EditablePerson: Nameable {
+    var name: String  // This is a read-write stored property
+}
