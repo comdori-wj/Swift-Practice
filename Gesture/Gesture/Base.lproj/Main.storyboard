@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Gesture" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lJu-sz-gPN">
+                                <rect key="frame" x="175.66666666666666" y="119" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j7G-eh-Hh2">
+                                <rect key="frame" x="175.66666666666666" y="173" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="lJu-sz-gPN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="bXx-mr-73c"/>
+                            <constraint firstItem="j7G-eh-Hh2" firstAttribute="top" secondItem="lJu-sz-gPN" secondAttribute="bottom" constant="33" id="cMe-4X-fgE"/>
+                            <constraint firstItem="j7G-eh-Hh2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="n5y-YB-4Cj"/>
+                            <constraint firstItem="lJu-sz-gPN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vWO-oc-enK"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="B0l-hB-KFn" appends="YES" id="mZc-zc-iCW"/>
+                            <outletCollection property="gestureRecognizers" destination="hcC-fz-vFg" appends="YES" id="GPn-Fb-Fgg"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="directionLabel" destination="lJu-sz-gPN" id="MB9-ht-1iQ"/>
+                        <outlet property="panGestureRecognizer" destination="hcC-fz-vFg" id="35d-CW-XfW"/>
+                        <outlet property="swipeGestureRecongnizer" destination="B0l-hB-KFn" id="BHD-T8-54x"/>
+                        <outlet property="xy좌표" destination="j7G-eh-Hh2" id="8BE-O9-1zl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="B0l-hB-KFn">
+                    <connections>
+                        <action selector="swipeHandler:" destination="BYZ-38-t0r" id="CVO-fB-ZNR"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="hcC-fz-vFg">
+                    <connections>
+                        <action selector="didPan:" destination="BYZ-38-t0r" id="6NK-ve-vD4"/>
+                    </connections>
+                </panGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="21" y="2"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
