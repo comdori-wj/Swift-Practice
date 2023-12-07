@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xcn-MQ-KD1">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--나만의 일기장-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController title="나만의 일기장" id="BYZ-38-t0r" customClass="LogInViewController" customModule="KeyChain_Practice" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="MMH-I0-MU6">
+                                <rect key="frame" x="50" y="364.5" width="314" height="167.5"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="비밀번호를 입력하세요." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FI8-et-T9x">
+                                        <rect key="frame" x="0.0" y="0.0" width="314" height="34"/>
+                                        <color key="tintColor" red="0.95278114079999998" green="0.67575621600000002" blue="0.83196109529999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mka-V8-2Kw">
+                                        <rect key="frame" x="0.0" y="44" width="314" height="34.5"/>
+                                        <color key="tintColor" red="0.95278114079999998" green="0.67575621600000002" blue="0.83196109529999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="gray" title="새로운 비밀번호 등록"/>
+                                        <connections>
+                                            <action selector="addNewPassword:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YBS-O5-UbW"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jw0-Ed-r5L">
+                                        <rect key="frame" x="0.0" y="88.5" width="314" height="34.5"/>
+                                        <color key="tintColor" red="0.95278114079999998" green="0.67575621600000002" blue="0.83196109529999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="gray" title="등록된 비밀번호 삭제"/>
+                                        <connections>
+                                            <action selector="deletePassword:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lOA-IG-8Xn"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qf2-aB-ztc">
+                                        <rect key="frame" x="0.0" y="133" width="314" height="34.5"/>
+                                        <color key="tintColor" red="0.95278114079999998" green="0.67575621600000002" blue="0.83196109529999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="로그인하고 일기장 보기">
+                                            <color key="baseBackgroundColor" red="0.95278114079999998" green="0.67575621600000002" blue="0.83196109529999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="tapLogInButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="izV-ud-aYY"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" verticalHuggingPriority="248" image="ClosedSecretDiary" translatesAutoresizingMaskIntoConstraints="NO" id="Oiq-nb-bBf">
+                                <rect key="frame" x="50" y="142" width="314" height="172.5"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <keyboardLayoutGuide key="keyboard" id="dT5-Yc-vLJ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="MMH-I0-MU6" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="BM4-eC-9d1"/>
+                            <constraint firstItem="MMH-I0-MU6" firstAttribute="top" secondItem="Oiq-nb-bBf" secondAttribute="bottom" constant="50" id="S8z-aR-WyT"/>
+                            <constraint firstItem="MMH-I0-MU6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="WLE-kz-Gln"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Oiq-nb-bBf" secondAttribute="trailing" constant="50" id="YEV-XH-OUo"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MMH-I0-MU6" secondAttribute="trailing" constant="50" id="ZYg-an-PzY"/>
+                            <constraint firstItem="MMH-I0-MU6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="s2c-E9-d9L"/>
+                            <constraint firstItem="Oiq-nb-bBf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="uOs-wc-akh"/>
+                            <constraint firstItem="Oiq-nb-bBf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="wP3-Tu-znf"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="나만의 일기장 💖" id="p2P-Ap-4t0"/>
+                    <connections>
+                        <outlet property="passwordTextField" destination="FI8-et-T9x" id="CAk-Qy-UaA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1013.0434782608696" y="114.50892857142857"/>
+        </scene>
+        <!--일기-->
+        <scene sceneID="JFi-XG-Ctm">
+            <objects>
+                <viewController storyboardIdentifier="diary" title="일기" id="sXl-s7-hz4" customClass="DiaryViewController" customModule="KeyChain_Practice" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RTk-vs-kOb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="gAx-UJ-LJy">
+                                <rect key="frame" x="10" y="68" width="394" height="719.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="kiT-Xf-Hc1">
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="1040"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OpenedSecretDiary" translatesAutoresizingMaskIntoConstraints="NO" id="IxN-Ez-70f">
+                                                <rect key="frame" x="0.0" y="0.0" width="394" height="200"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="200" id="H0Y-JL-jCp"/>
+                                                </constraints>
+                                            </imageView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" keyboardDismissMode="interactive" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="rcq-3V-BIv">
+                                                <rect key="frame" x="0.0" y="210" width="394" height="830"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <color key="tintColor" red="0.95278114079999998" green="0.67575621600000002" blue="0.83196109529999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <string key="text">아침에 일어나자마자 컴퓨터를 켰어. 앱 개발을 하면서 아빠가 항상 말씀하시던 '너는 꼭 개발자가 되어야 한다'는 말이 머릿속을 맴돌았어. 아빠는 예전에 정말 훌륭한 개발자셨지. 그리고 그게 내 꿈이 되었어. 아빠는 돌아가시기 전에 내게 유언으로 '개발자가 되어 우리 가족의 꿈을 이어가라'고 말씀하셨어. 아빠가 그렇게 말씀하신 이유는, 개발을 통해 세상을 더 나은 곳으로 만들 수 있다고 믿었기 때문이야. 😢
+
+아빠가 돌아가신 후, 엄마는 혼자서 가정을 지키기 위해 정말 힘든 일을 하고 계셔. 하지만 엄마는 항상 나에게 힘을 주시고, 내 꿈을 지지해주셔. 엄마는 내가 아빠의 뜻을 이어받아 훌륭한 개발자가 되길 원해. 🌸
+
+학원에서는 좀 힘들어. 다른 친구들이 나를 꼽주는 일이 종종 있거든. '코드가 이게 뭐야?'라는 말을 듣기도 해. 하지만 나는 포기하지 않아. 아빠의 꿈과 엄마의 지지가 있으니까. 💪
+
+오전에는 Swift를 공부했어. 가끔 어렵지만, 아빠의 꿈을 생각하면서 끝까지 해내고 싶어. 엄마도 항상 '네가 할 수 있다'고 격려해주셔. 그 말이 정말 큰 힘이 돼. 😌
+
+점심을 먹고 오후에는 앱 개발에 집중했어. 에러 메시지가 나올 때마다 아빠와 엄마를 생각하며 힘을 냈어.
+
+저녁에는 엄마랑 함께 밥을 먹으면서 오늘 있었던 일들을 이야기했어. 엄마는 '아빠도 네가 자랑스러워할 거야. 네 꿈을 위해 노력하는 모습이 멋져'라고 말씀하셨어. 엄마의 말에 눈물이 났어. 😢
+
+밤에는 내일의 계획을 세우면서 하루를 돌아봤어. 아빠의 꿈과 엄마의 사랑 덕분에 나는 꿈을 향해 계속 나아갈 수 있을 거야. iOS 개발자가 되어 아빠의 유지를 이어가고, 세상을 더 좋은 곳으로 만들 거야. 💻🌟
+
+내일도 화이팅! 엄마, 아빠, 사랑해요. 💖</string>
+                                                <color key="textColor" red="0.89946514369999997" green="0.40404450889999999" blue="0.57792067530000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="kiT-Xf-Hc1" firstAttribute="bottom" secondItem="5Pf-0L-S6D" secondAttribute="bottom" id="3GS-Or-vJO"/>
+                                    <constraint firstItem="kiT-Xf-Hc1" firstAttribute="width" secondItem="1wt-nP-Tg3" secondAttribute="width" id="LCM-01-KM6"/>
+                                    <constraint firstItem="kiT-Xf-Hc1" firstAttribute="trailing" secondItem="5Pf-0L-S6D" secondAttribute="trailing" id="OpZ-pe-uAc"/>
+                                    <constraint firstItem="5Pf-0L-S6D" firstAttribute="top" secondItem="kiT-Xf-Hc1" secondAttribute="top" id="T7B-MI-lNK"/>
+                                    <constraint firstItem="5Pf-0L-S6D" firstAttribute="leading" secondItem="kiT-Xf-Hc1" secondAttribute="leading" id="t9t-hs-yw2"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="5Pf-0L-S6D"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="1wt-nP-Tg3"/>
+                            </scrollView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9bL-P3-nPA">
+                                <rect key="frame" x="20" y="807.5" width="374" height="34.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Vs-v0-hZS">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="34.5"/>
+                                        <color key="tintColor" red="0.95278114079999998" green="0.67575621600000002" blue="0.83196109529999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="일기 저장하기">
+                                            <color key="baseBackgroundColor" red="0.95278114079999998" green="0.67575621600000002" blue="0.83196109529999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="saveDiary:" destination="sXl-s7-hz4" eventType="touchUpInside" id="nKe-Sj-BpY"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="hXe-CE-t7P"/>
+                        <keyboardLayoutGuide key="keyboard" id="Shj-8k-VHM"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="9bL-P3-nPA" firstAttribute="leading" secondItem="hXe-CE-t7P" secondAttribute="leading" constant="20" id="53O-xy-l9t"/>
+                            <constraint firstItem="hXe-CE-t7P" firstAttribute="trailing" secondItem="gAx-UJ-LJy" secondAttribute="trailing" constant="10" id="9gk-E5-YSJ"/>
+                            <constraint firstItem="9bL-P3-nPA" firstAttribute="top" secondItem="gAx-UJ-LJy" secondAttribute="bottom" constant="20" id="9zj-MM-hMg"/>
+                            <constraint firstItem="Shj-8k-VHM" firstAttribute="top" secondItem="9bL-P3-nPA" secondAttribute="bottom" priority="750" constant="20" id="Ef9-em-dUZ"/>
+                            <constraint firstItem="gAx-UJ-LJy" firstAttribute="top" secondItem="hXe-CE-t7P" secondAttribute="top" constant="20" id="HGv-QL-cYp"/>
+                            <constraint firstItem="hXe-CE-t7P" firstAttribute="trailing" secondItem="9bL-P3-nPA" secondAttribute="trailing" constant="20" id="QXd-kz-B6Q"/>
+                            <constraint firstItem="gAx-UJ-LJy" firstAttribute="leading" secondItem="hXe-CE-t7P" secondAttribute="leading" constant="10" id="x5E-VL-IZU"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8t8-Gf-OOC" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1868.1159420289857" y="114.50892857142857"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="J6i-lS-epE">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xcn-MQ-KD1" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6E0-zo-JCN">
+                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.95278114079999998" green="0.67575621600000002" blue="0.83196109529999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1i5-OA-Pbl">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="C45-8g-Bwo"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6es-HO-Vhi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="102.89855072463769" y="114.50892857142857"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ClosedSecretDiary" width="447" height="488"/>
+        <image name="OpenedSecretDiary" width="512" height="512"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
