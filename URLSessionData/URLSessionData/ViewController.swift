@@ -7,20 +7,24 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ImageCache {
+    private init() {}
+}
 
+class ViewController: UIViewController {
+    
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var btn: UIButton!
     
     var dataImage : Data?
-   
+    let cachedImages = NSCache<NSURL, UIImage>()
     
-    private lazy var session: URLSession = {
-        let configuration = URLSessionConfiguration.default
-        configuration.waitsForConnectivity = true
-        return URLSession(configuration: configuration,
-                          delegate: self, delegateQueue: nil)
-    }()
+    //    private lazy var session: URLSession = {
+    //        let configuration = URLSessionConfiguration.default
+    //        configuration.waitsForConnectivity = true
+    //        return URLSession(configuration: configuration,
+    //                          delegate: self, delegateQueue: nil)
+    //    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,9 +33,27 @@ class ViewController: UIViewController {
     
     
     @IBAction func btnTapped(_ sender: Any) {
-        dataImage = Data()
+        //        dataImage = Data()
         guard let url = URL(string: "https://wallpaperaccess.com/download/europe-4k-1318341") else {return}
-        session.dataTask(with: url).resume()
+        if cachedImages.object(forKey: NSURL(string: url.formatted())!) == nil {
+            URLSession.shared.dataTask(with: url) { data, response, error in
+                guard let data = data else { return }
+                
+                DispatchQueue.main.async { [weak self] in
+                    let uiImage = UIImage(data: data)!
+                    self?.image.image = uiImage
+                    self?.cachedImages.setObject(uiImage, forKey: NSURL(string: url.formatted())!)
+                    print("캐시 저장")
+                    return
+                }
+            }.resume()
+            //            session.dataTask(with: url).resume()
+        } else {
+            DispatchQueue.main.async {
+                self.image.image = self.cachedImages.object(forKey: NSURL(string: url.formatted())!)!
+                print("노 다운")
+            }
+        }
     }
 }
 
@@ -52,4 +74,3 @@ extension ViewController:URLSessionDataDelegate {
         }
     }
 }
-
