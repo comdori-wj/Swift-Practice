@@ -5,7 +5,7 @@
 //  Created by Wonji Ha on 12/5/23.
 //
 
-// TV의 동작 상태를 코드로 나타내 봤습니다.
+// TV 리모컨을 구현하였습니다.
 
 import Foundation
 
@@ -16,34 +16,43 @@ enum State { // TV 전원 상태 구조체
 
 // MARK: - Command
 protocol Command {
-    func play()
+    func execute()
+    func undo()
 }
 
-struct turnOnTvCommand: Command { // 명령을 상속 받음
+struct turnOnTvCommand: Command { // tv 켜짐 명령
     private let tv: TV
     
     init(tv: TV) {
         self.tv = tv
     }
     
-    func play() {
+    func execute() {
         tv.turnOn()
     }
-}
-
-struct turnOffTvCommand: Command {
-    private let tv: TV
     
-    init(tv: TV) {
-        self.tv = tv
-    }
-    
-    func play() {
+    func undo() {
         tv.turnOff()
     }
 }
 
-struct changeChannelCommand: Command {
+struct turnOffTvCommand: Command { // tv 꺼짐 명령
+    private let tv: TV
+    
+    init(tv: TV) {
+        self.tv = tv
+    }
+    
+    func execute() {
+        tv.turnOff()
+    }
+    
+    func undo() {
+        tv.turnOn()
+    }
+}
+
+struct changeChannelCommand: Command { // 채널 변경 명령
     private var tv: TV
     private var channel: String
     
@@ -52,8 +61,12 @@ struct changeChannelCommand: Command {
         self.channel = channel
     }
     
-    func play() {
-        tv.change(channel) // 채널 변경
+    func execute() {
+        tv.change(channel)
+    }
+    
+    func undo() {
+        tv.change(channel)
     }
 }
 // MARK: - Receiver(수신자)
@@ -89,9 +102,9 @@ class TV {
 }
 // MARK: - Invoker(호출자)
 final class TVControl { // 리모컨
-    
     private var redButton: Command // Protocol인 Command를 가짐
     private var numberButton: Command
+    private var commandHistory: [Command] = [] // 명령 저장소
     
     init(redButton: Command, numberButton: Command) {
         self.redButton = redButton
@@ -99,11 +112,22 @@ final class TVControl { // 리모컨
     }
     
     func pressRedButton() {
-        redButton.play()
+        redButton.execute()
+        commandHistory.append(redButton)
     }
     
     func pressChannelChangeButton() {
-        numberButton.play()
+        numberButton.execute()
+        commandHistory.append(numberButton)
+    }
+    
+    func undoButton() {
+        if commandHistory.isEmpty != true {
+            let command = self.commandHistory.removeLast()
+            command.undo()
+        } else {
+            print("되돌릴 작업이 없습니다.")
+        }
     }
 }
 
@@ -115,7 +139,10 @@ let changeChannelOfTV = changeChannelCommand(tv: newTV, channel: "5")
 let tvRemote1 = TVControl(redButton: turnOnTv, numberButton: changeChannelOfTV)
 tvRemote1.pressRedButton()
 tvRemote1.pressChannelChangeButton()
+tvRemote1.undoButton() // 만약 되돌린다면?
 
 let tvRemote2 = TVControl(redButton: turnOffTv, numberButton: changeChannelOfTV)
-tvRemote2.pressRedButton()
-tvRemote2.pressChannelChangeButton()
+//tvRemote2.pressRedButton()
+//tvRemote2.pressChannelChangeButton()
+//
+//tvRemote2.undoCommand()
