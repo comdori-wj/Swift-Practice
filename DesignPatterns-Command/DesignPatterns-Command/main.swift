@@ -139,10 +139,10 @@ let changeChannelOfTV = changeChannelCommand(tv: newTV, channel: "5")
 let tvRemote1 = TVControl(redButton: turnOnTv, numberButton: changeChannelOfTV)
 tvRemote1.pressRedButton()
 tvRemote1.pressChannelChangeButton()
-tvRemote1.undoButton() // 만약 되돌린다면?
+//tvRemote1.undoButton() // 만약 되돌린다면?
 
 let tvRemote2 = TVControl(redButton: turnOffTv, numberButton: changeChannelOfTV)
-//tvRemote2.pressRedButton()
-//tvRemote2.pressChannelChangeButton()
-//
-//tvRemote2.undoCommand()
+tvRemote2.pressRedButton()
+tvRemote2.pressChannelChangeButton()
+
+tvRemote2.undoButton()
