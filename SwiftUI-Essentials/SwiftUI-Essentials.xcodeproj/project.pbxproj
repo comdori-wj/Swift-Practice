@@ -15,6 +15,7 @@
 		3720F2662B4320EB00AC2E09 /* SwiftUI_EssentialsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3720F2652B4320EB00AC2E09 /* SwiftUI_EssentialsUITests.swift */; };
 		3720F2682B4320EB00AC2E09 /* SwiftUI_EssentialsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3720F2672B4320EB00AC2E09 /* SwiftUI_EssentialsUITestsLaunchTests.swift */; };
 		374B09262B44E776001F6808 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374B09252B44E776001F6808 /* CircleImage.swift */; };
+		374B09282B44E942001F6808 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 374B09272B44E942001F6808 /* MapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		3720F2652B4320EB00AC2E09 /* SwiftUI_EssentialsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_EssentialsUITests.swift; sourceTree = "<group>"; };
 		3720F2672B4320EB00AC2E09 /* SwiftUI_EssentialsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_EssentialsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		374B09252B44E776001F6808 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
+		374B09272B44E942001F6808 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 				3720F24A2B4320E900AC2E09 /* SwiftUI_EssentialsApp.swift */,
 				3720F24C2B4320E900AC2E09 /* ContentView.swift */,
 				374B09252B44E776001F6808 /* CircleImage.swift */,
+				374B09272B44E942001F6808 /* MapView.swift */,
 				3720F24E2B4320EA00AC2E09 /* Assets.xcassets */,
 				3720F2502B4320EA00AC2E09 /* Preview Content */,
 			);
@@ -261,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3720F24D2B4320E900AC2E09 /* ContentView.swift in Sources */,
+				374B09282B44E942001F6808 /* MapView.swift in Sources */,
 				3720F24B2B4320E900AC2E09 /* SwiftUI_EssentialsApp.swift in Sources */,
 				374B09262B44E776001F6808 /* CircleImage.swift in Sources */,
 			);
