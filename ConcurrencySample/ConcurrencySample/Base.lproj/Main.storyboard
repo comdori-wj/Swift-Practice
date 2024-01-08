@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8XO-Tm-7Nk">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="oPo-HK-QsY">
+            <objects>
+                <viewController id="8XO-Tm-7Nk" customClass="ViewController" customModule="ConcurrencySample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TEq-ZQ-gPz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="j7a-S0-T7X">
+                                <rect key="frame" x="20" y="48" width="374" height="482"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="9Yg-qO-R5w">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="81.5"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Nf1-4j-kev">
+                                                <rect key="frame" x="0.0" y="1" width="145" height="79"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="Nf1-4j-kev" secondAttribute="height" multiplier="16:9" id="8qJ-DH-oX9"/>
+                                                </constraints>
+                                            </imageView>
+                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="vp6-oz-zdN">
+                                                <rect key="frame" x="145" y="39" width="146" height="4"/>
+                                            </progressView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ke9-AL-1Sf">
+                                                <rect key="frame" x="291" y="23.5" width="83" height="34.5"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Load"/>
+                                                <connections>
+                                                    <action selector="touchUpLoadImageButton:" destination="8XO-Tm-7Nk" eventType="touchUpInside" id="MxY-W5-ket"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="TZK-0j-LqH">
+                                        <rect key="frame" x="0.0" y="89.5" width="374" height="81.5"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="luU-kv-nCD">
+                                                <rect key="frame" x="0.0" y="1" width="145" height="79"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="luU-kv-nCD" secondAttribute="height" multiplier="16:9" id="3cE-uJ-zEk"/>
+                                                </constraints>
+                                            </imageView>
+                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="tQB-kF-KuS">
+                                                <rect key="frame" x="145" y="39" width="146" height="4"/>
+                                            </progressView>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o2S-qY-yGW">
+                                                <rect key="frame" x="291" y="23.5" width="83" height="34.5"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Load"/>
+                                                <connections>
+                                                    <action selector="touchUpLoadImageButton:" destination="8XO-Tm-7Nk" eventType="touchUpInside" id="g8b-PA-vyH"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="BZs-9i-Uib">
+                                        <rect key="frame" x="0.0" y="179" width="374" height="81.5"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="vNp-Ys-qwW">
+                                                <rect key="frame" x="0.0" y="1" width="145" height="79"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="vNp-Ys-qwW" secondAttribute="height" multiplier="16:9" id="78p-9x-f3s"/>
+                                                </constraints>
+                                            </imageView>
+                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="JY2-Uk-YKm">
+                                                <rect key="frame" x="145" y="39" width="146" height="4"/>
+                                            </progressView>
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gO1-9A-OlK">
+                                                <rect key="frame" x="291" y="23.5" width="83" height="34.5"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Load"/>
+                                                <connections>
+                                                    <action selector="touchUpLoadImageButton:" destination="8XO-Tm-7Nk" eventType="touchUpInside" id="Hvr-tx-5xg"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Lfx-hv-tCf">
+                                        <rect key="frame" x="0.0" y="268.5" width="374" height="81.5"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="TfG-nh-6bJ">
+                                                <rect key="frame" x="0.0" y="1" width="145" height="79"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="TfG-nh-6bJ" secondAttribute="height" multiplier="16:9" id="a8h-Bo-WGq"/>
+                                                </constraints>
+                                            </imageView>
+                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="x40-b4-cYB">
+                                                <rect key="frame" x="145" y="39" width="146" height="4"/>
+                                            </progressView>
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hA8-85-psK">
+                                                <rect key="frame" x="291" y="23.5" width="83" height="34.5"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Load"/>
+                                                <connections>
+                                                    <action selector="touchUpLoadImageButton:" destination="8XO-Tm-7Nk" eventType="touchUpInside" id="IfJ-Dz-W0A"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="wAf-Ce-pLp">
+                                        <rect key="frame" x="0.0" y="358" width="374" height="81.5"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="2kQ-oB-L0L">
+                                                <rect key="frame" x="0.0" y="1" width="145" height="79"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="2kQ-oB-L0L" secondAttribute="height" multiplier="16:9" id="y4i-RX-Qfz"/>
+                                                </constraints>
+                                            </imageView>
+                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="K10-7X-Xf0">
+                                                <rect key="frame" x="145" y="39" width="146" height="4"/>
+                                            </progressView>
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V6v-Lf-XZn">
+                                                <rect key="frame" x="291" y="23.5" width="83" height="34.5"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="Load"/>
+                                                <connections>
+                                                    <action selector="touchUpLoadImageButton:" destination="8XO-Tm-7Nk" eventType="touchUpInside" id="gVv-n6-DVh"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ug8-xM-gg7">
+                                        <rect key="frame" x="0.0" y="447.5" width="374" height="34.5"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Load All Images"/>
+                                        <connections>
+                                            <action selector="touchUpLoadAllImagesButton:" destination="8XO-Tm-7Nk" eventType="touchUpInside" id="PuO-z1-MdE"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="hA8-85-psK" firstAttribute="leading" secondItem="gO1-9A-OlK" secondAttribute="leading" id="71C-U0-vlv"/>
+                                    <constraint firstItem="V6v-Lf-XZn" firstAttribute="leading" secondItem="hA8-85-psK" secondAttribute="leading" id="86Z-oa-clB"/>
+                                    <constraint firstItem="o2S-qY-yGW" firstAttribute="leading" secondItem="ke9-AL-1Sf" secondAttribute="leading" id="LhV-Fl-Y2e"/>
+                                    <constraint firstItem="2kQ-oB-L0L" firstAttribute="trailing" secondItem="TfG-nh-6bJ" secondAttribute="trailing" id="VoS-IR-gVu"/>
+                                    <constraint firstItem="luU-kv-nCD" firstAttribute="trailing" secondItem="Nf1-4j-kev" secondAttribute="trailing" id="gxf-Fv-MYW"/>
+                                    <constraint firstItem="TfG-nh-6bJ" firstAttribute="trailing" secondItem="vNp-Ys-qwW" secondAttribute="trailing" id="lE9-qs-VcP"/>
+                                    <constraint firstItem="vNp-Ys-qwW" firstAttribute="trailing" secondItem="luU-kv-nCD" secondAttribute="trailing" id="lmL-Pa-RSA"/>
+                                    <constraint firstItem="gO1-9A-OlK" firstAttribute="leading" secondItem="o2S-qY-yGW" secondAttribute="leading" id="oFm-86-8xp"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="RMK-Zi-jGI"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Nf1-4j-kev" firstAttribute="width" secondItem="TEq-ZQ-gPz" secondAttribute="width" multiplier="35%" id="GlQ-Dt-XFF"/>
+                            <constraint firstItem="j7a-S0-T7X" firstAttribute="top" secondItem="RMK-Zi-jGI" secondAttribute="top" id="O3a-7F-3ER"/>
+                            <constraint firstItem="j7a-S0-T7X" firstAttribute="leading" secondItem="RMK-Zi-jGI" secondAttribute="leading" constant="20" id="eDa-ss-u4H"/>
+                            <constraint firstItem="RMK-Zi-jGI" firstAttribute="trailing" secondItem="j7a-S0-T7X" secondAttribute="trailing" constant="20" id="kOM-Ww-Tqi"/>
+                            <constraint firstItem="ke9-AL-1Sf" firstAttribute="width" secondItem="TEq-ZQ-gPz" secondAttribute="width" multiplier="20%" id="kVu-Vd-dWo"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outletCollection property="imageViews" destination="Nf1-4j-kev" collectionClass="NSMutableArray" id="bKE-g7-KWH"/>
+                        <outletCollection property="imageViews" destination="luU-kv-nCD" collectionClass="NSMutableArray" id="JRF-Ez-k3c"/>
+                        <outletCollection property="imageViews" destination="vNp-Ys-qwW" collectionClass="NSMutableArray" id="Qff-ar-LHU"/>
+                        <outletCollection property="imageViews" destination="TfG-nh-6bJ" collectionClass="NSMutableArray" id="6H8-1C-Djz"/>
+                        <outletCollection property="imageViews" destination="2kQ-oB-L0L" collectionClass="NSMutableArray" id="q4L-WH-7MF"/>
+                        <outletCollection property="progressViews" destination="vp6-oz-zdN" collectionClass="NSMutableArray" id="gUL-NL-N1w"/>
+                        <outletCollection property="progressViews" destination="tQB-kF-KuS" collectionClass="NSMutableArray" id="Oh2-YV-Zkg"/>
+                        <outletCollection property="progressViews" destination="JY2-Uk-YKm" collectionClass="NSMutableArray" id="wJE-o5-PGo"/>
+                        <outletCollection property="progressViews" destination="x40-b4-cYB" collectionClass="NSMutableArray" id="Z1u-Ee-Eq5"/>
+                        <outletCollection property="progressViews" destination="K10-7X-Xf0" collectionClass="NSMutableArray" id="bfi-1K-JEA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oMp-fC-qNU" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1008.6956521739131" y="137.94642857142856"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="photo" catalog="system" width="128" height="93"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
