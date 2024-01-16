@@ -41,26 +41,26 @@ extension ViewController {
     @IBAction func touchUpLoadAllImagesButton(_ sender: UIButton) {
         
         Task {
-//            for index in 0...4 {
-//                async let thumb0 = fetchThumbnail(for: index)
-//                async let thumb1 = fetchThumbnail(for: index)
-//                async let thumb2 = fetchThumbnail(for: index)
-//                async let thumb3 = fetchThumbnail(for: index)
-//                async let thumb4 = fetchThumbnail(for: index)
-//                let thumbs = try await [thumb0, thumb1, thumb2, thumb3, thumb4]
-//
-//                imageViews[index].image = thumbs[index]
-//            }
-            
-                async let thumb0 = fetchThumbnail(for: 0)
-                async let thumb1 = fetchThumbnail(for: 1)
-                async let thumb2 = fetchThumbnail(for: 2)
-                async let thumb3 = fetchThumbnail(for: 3)
-                async let thumb4 = fetchThumbnail(for: 4)
+            for index in 0...4 {
+                async let thumb0 = fetchThumbnail(for: index)
+                async let thumb1 = fetchThumbnail(for: index)
+                async let thumb2 = fetchThumbnail(for: index)
+                async let thumb3 = fetchThumbnail(for: index)
+                async let thumb4 = fetchThumbnail(for: index)
                 let thumbs = try await [thumb0, thumb1, thumb2, thumb3, thumb4]
-            for index in 0..<thumbs.count {
+
                 imageViews[index].image = thumbs[index]
             }
+            
+//                async let thumb0 = fetchThumbnail(for: 0)
+//                async let thumb1 = fetchThumbnail(for: 1)
+//                async let thumb2 = fetchThumbnail(for: 2)
+//                async let thumb3 = fetchThumbnail(for: 3)
+//                async let thumb4 = fetchThumbnail(for: 4)
+//                let thumbs = try await [thumb0, thumb1, thumb2, thumb3, thumb4]
+//            for index in 0..<thumbs.count {
+//                imageViews[index].image = thumbs[index]
+//            }
         }
         resetAllImageViews()
     }
